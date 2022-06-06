@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "banger";
+    src: url(./assets/fonts/Bangers-Regular.ttf);
+}
+
+*{
+    margin : 0;
+    padding: 0;
+}
+
+button{
+    background: transparent;
+    border: none;
+    cursor : pointer;
+}
+
+.mainButton, .mainCookie{
+    max-width: 250px;
+    height: 250px;
+}
+
+.secondButton, .secondCookie{
+    width: 50px;
+    height: 50px;
+}
+
+.allSecondButton {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap : 1rem;
+}
+
+.cookieBooster{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: banger;
+}
