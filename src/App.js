@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from "react";
 import coockie from "./assets/img/coockie.png";
 import MiniCookie from './components/MiniCookie';
+import { motion } from "framer-motion"
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -44,7 +45,10 @@ function App() {
         <li>Cookie per click</li>
       </ul>
       <button className='mainButton' onClick={() => setCounter(count => count + 1)}>
-        <img className='mainCookie' draggable="false" src= {coockie} alt="main coockie" />
+        <motion.img className='mainCookie' draggable="false" src= {coockie} alt="main coockie"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        />
       </button>
       <div className='allSecondButton'>
         <MiniCookie booster={() => modifier("white")} color = "white" valor = {1}/>
