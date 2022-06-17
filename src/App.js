@@ -11,9 +11,9 @@ function App() {
 
   useEffect(() => {
     const myTimer = setInterval(() => {
-      setCounter((counter) => counter + cps);
+      setCounter((counter) => counter + cps / 10);
       console.log("Interval Launch");
-    }, 1000);
+    }, 100);
     return () => clearInterval(myTimer);
   }, [cps]);
 
@@ -48,13 +48,14 @@ function App() {
     <div className="all">
       <h1>Cookie-Clicker</h1>
       <ul className="stats">
-        <li>{counter}</li>
+        <li>{counter.toFixed(1)}</li>
         <li>{cpp} 🍪🖱️</li>
         <li>{cps} 🍪⏲️</li>
       </ul>
       <button
         className="mainButton"
         onClick={() => setCounter((count) => count + cpp)}
+        onMouseDown={(e) => e.preventDefault()}
       >
         <motion.img
           className="mainCookie"
